@@ -12,6 +12,7 @@ public class AccountServiceImplTest {
 
     @Test
     public void increaseBalanceTest() {
+        AccountBalance credit = accountService.credit(BigDecimal.valueOf(100), 1);
         assertEquals(BigDecimal.valueOf(100), accountService.getUserBalance(1).getBalance());
         assertEquals(1, accountService.getUserBalance(1).getUser().getUserId());
     }
